@@ -1,0 +1,6 @@
+D:\Study\OOP\Week02\s2Week2.1\S2 week 2 Challenge 1\S2 week 2 Challenge 1\bin\Debug\S2 week 2 Challenge 1.exe.config
+D:\Study\OOP\Week02\s2Week2.1\S2 week 2 Challenge 1\S2 week 2 Challenge 1\bin\Debug\S2 week 2 Challenge 1.exe
+D:\Study\OOP\Week02\s2Week2.1\S2 week 2 Challenge 1\S2 week 2 Challenge 1\bin\Debug\S2 week 2 Challenge 1.pdb
+D:\Study\OOP\Week02\s2Week2.1\S2 week 2 Challenge 1\S2 week 2 Challenge 1\obj\Debug\S2 week 2 Challenge 1.csproj.CoreCompileInputs.cache
+D:\Study\OOP\Week02\s2Week2.1\S2 week 2 Challenge 1\S2 week 2 Challenge 1\obj\Debug\S2 week 2 Challenge 1.exe
+D:\Study\OOP\Week02\s2Week2.1\S2 week 2 Challenge 1\S2 week 2 Challenge 1\obj\Debug\S2 week 2 Challenge 1.pdb
