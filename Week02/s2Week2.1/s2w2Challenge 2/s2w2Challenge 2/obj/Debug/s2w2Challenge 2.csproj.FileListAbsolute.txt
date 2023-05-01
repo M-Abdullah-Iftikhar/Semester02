@@ -1,0 +1,7 @@
+D:\Study\OOP\Week02\s2Week2.1\s2w2Challenge 2\s2w2Challenge 2\bin\Debug\s2w2Challenge 2.exe.config
+D:\Study\OOP\Week02\s2Week2.1\s2w2Challenge 2\s2w2Challenge 2\bin\Debug\s2w2Challenge 2.exe
+D:\Study\OOP\Week02\s2Week2.1\s2w2Challenge 2\s2w2Challenge 2\bin\Debug\s2w2Challenge 2.pdb
+D:\Study\OOP\Week02\s2Week2.1\s2w2Challenge 2\s2w2Challenge 2\obj\Debug\s2w2Challenge 2.csproj.AssemblyReference.cache
+D:\Study\OOP\Week02\s2Week2.1\s2w2Challenge 2\s2w2Challenge 2\obj\Debug\s2w2Challenge 2.csproj.CoreCompileInputs.cache
+D:\Study\OOP\Week02\s2Week2.1\s2w2Challenge 2\s2w2Challenge 2\obj\Debug\s2w2Challenge 2.exe
+D:\Study\OOP\Week02\s2Week2.1\s2w2Challenge 2\s2w2Challenge 2\obj\Debug\s2w2Challenge 2.pdb

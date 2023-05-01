@@ -1,0 +1,7 @@
+D:\Study\OOP\Week03\s2Week3Challenge(products)\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+D:\Study\OOP\Week03\s2Week3Challenge(products)\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\Study\OOP\Week03\s2Week3Challenge(products)\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\Study\OOP\Week03\s2Week3Challenge(products)\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\Study\OOP\Week03\s2Week3Challenge(products)\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\Study\OOP\Week03\s2Week3Challenge(products)\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\Study\OOP\Week03\s2Week3Challenge(products)\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

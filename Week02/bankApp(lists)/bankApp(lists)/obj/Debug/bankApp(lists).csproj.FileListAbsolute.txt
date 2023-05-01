@@ -1,0 +1,7 @@
+D:\Study\OOP\Week02\bankApp(lists)\bankApp(lists)\bin\Debug\bankApp(lists).exe.config
+D:\Study\OOP\Week02\bankApp(lists)\bankApp(lists)\bin\Debug\bankApp(lists).exe
+D:\Study\OOP\Week02\bankApp(lists)\bankApp(lists)\bin\Debug\bankApp(lists).pdb
+D:\Study\OOP\Week02\bankApp(lists)\bankApp(lists)\obj\Debug\bankApp(lists).csproj.AssemblyReference.cache
+D:\Study\OOP\Week02\bankApp(lists)\bankApp(lists)\obj\Debug\bankApp(lists).csproj.CoreCompileInputs.cache
+D:\Study\OOP\Week02\bankApp(lists)\bankApp(lists)\obj\Debug\bankApp(lists).exe
+D:\Study\OOP\Week02\bankApp(lists)\bankApp(lists)\obj\Debug\bankApp(lists).pdb

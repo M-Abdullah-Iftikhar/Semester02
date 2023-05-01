@@ -1,0 +1,10 @@
+D:\Study\OOP\Week02\gameVer2(Lists)\gameVer2(Lists)\bin\Debug\gameVer2(Lists).exe.config
+D:\Study\OOP\Week02\gameVer2(Lists)\gameVer2(Lists)\bin\Debug\gameVer2(Lists).exe
+D:\Study\OOP\Week02\gameVer2(Lists)\gameVer2(Lists)\bin\Debug\gameVer2(Lists).pdb
+D:\Study\OOP\Week02\gameVer2(Lists)\gameVer2(Lists)\bin\Debug\EZInput.dll
+D:\Study\OOP\Week02\gameVer2(Lists)\gameVer2(Lists)\bin\Debug\EZInput.xml
+D:\Study\OOP\Week02\gameVer2(Lists)\gameVer2(Lists)\obj\Debug\gameVer2(Lists).csproj.AssemblyReference.cache
+D:\Study\OOP\Week02\gameVer2(Lists)\gameVer2(Lists)\obj\Debug\gameVer2(Lists).csproj.CoreCompileInputs.cache
+D:\Study\OOP\Week02\gameVer2(Lists)\gameVer2(Lists)\obj\Debug\gameVer2(Lists).csproj.CopyComplete
+D:\Study\OOP\Week02\gameVer2(Lists)\gameVer2(Lists)\obj\Debug\gameVer2(Lists).exe
+D:\Study\OOP\Week02\gameVer2(Lists)\gameVer2(Lists)\obj\Debug\gameVer2(Lists).pdb
