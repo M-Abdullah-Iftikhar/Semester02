@@ -1,0 +1,14 @@
+E:\c#\uams\uams\bin\Debug\uams.exe.config
+E:\c#\uams\uams\bin\Debug\uams.exe
+E:\c#\uams\uams\bin\Debug\uams.pdb
+E:\c#\uams\uams\obj\Debug\uams.csproj.AssemblyReference.cache
+E:\c#\uams\uams\obj\Debug\uams.csproj.CoreCompileInputs.cache
+E:\c#\uams\uams\obj\Debug\uams.exe
+E:\c#\uams\uams\obj\Debug\uams.pdb
+D:\Study\OOP\Week05\uams(bl,dl,ul)\uams(bl,dl,ul)\uams\bin\Debug\uams.exe.config
+D:\Study\OOP\Week05\uams(bl,dl,ul)\uams(bl,dl,ul)\uams\bin\Debug\uams.exe
+D:\Study\OOP\Week05\uams(bl,dl,ul)\uams(bl,dl,ul)\uams\bin\Debug\uams.pdb
+D:\Study\OOP\Week05\uams(bl,dl,ul)\uams(bl,dl,ul)\uams\obj\Debug\uams.csproj.AssemblyReference.cache
+D:\Study\OOP\Week05\uams(bl,dl,ul)\uams(bl,dl,ul)\uams\obj\Debug\uams.csproj.CoreCompileInputs.cache
+D:\Study\OOP\Week05\uams(bl,dl,ul)\uams(bl,dl,ul)\uams\obj\Debug\uams.exe
+D:\Study\OOP\Week05\uams(bl,dl,ul)\uams(bl,dl,ul)\uams\obj\Debug\uams.pdb

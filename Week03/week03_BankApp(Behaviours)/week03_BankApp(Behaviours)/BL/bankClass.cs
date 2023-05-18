@@ -33,5 +33,7 @@ namespace week03_BankApp_Behaviours_.BL
         public bool checkAdmin;
         public bool loginCheck;
         public bool checkUser2;
+
+
     }
 }

@@ -1,0 +1,2 @@
+abdullah,12341234,1234123412341234,gas,I Love You,N/A,11877,30370,209,20000,0,True,False,True,True,False
+hammad,12341234,1234123412341234,N/A,N/A,N/A,0,0,0,0,0,False,False,False,False,False

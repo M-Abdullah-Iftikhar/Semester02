@@ -132,7 +132,7 @@ namespace week03_BankApp_Behaviours_
                                 bankInfo.checkUser2 = confirmRole(users, bankInfo);
                                 if (bankInfo.checkUser2 == false)
                                 {
-                                    //clientMenu();
+                                    clientMenu(users, bankInfo);
                                     bankInfo.loginCheck = false;
                                     break;
                                 }
@@ -173,15 +173,16 @@ namespace week03_BankApp_Behaviours_
             {
                 Console.Clear();
                 header();
-                // SubMenuForMainMenu("Main");
-                Console.WriteLine("Main Menu");
-                Console.WriteLine("<>---(<><><>)---(<><><>)---<>---(<><><>)---(<><><>)---<>");
-
+                SubMenuForMainMenu("Main");
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Press 1 to Enter as an Manager: ");
                 Console.WriteLine("Press 2 to Enter as a Client: ");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("Press 3 to Close the Application: ");
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Enter Your Choice: ");
-                choice = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.White;
+               choice = Console.ReadLine();
                 if (choice == "1" || choice == "3" || choice == "2")
                 {
                     break;
@@ -245,18 +246,24 @@ namespace week03_BankApp_Behaviours_
                 Console.Clear();
                 header();
                 SubMenu("Login Menu");
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Press 1 to Login to Your Account: ");
                 Console.WriteLine("Press 2 to create a Account: ");
-                Console.WriteLine("Press 3 to Change User: ");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+               Console.WriteLine("Press 3 to Change User: ");
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Enter Your Choice: ");
+                Console.ForegroundColor = ConsoleColor.White;
                 choice = Console.ReadLine();
-                if (choice == "1" || choice == "3" || choice == "2")
+                if (choice == "1" || choice == "2" || choice == "3")
                 {
                     break;
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Please Enter a Valid Option: ");
+                    Console.ForegroundColor = ConsoleColor.White;
                     press();
                 }
             }
@@ -269,13 +276,13 @@ namespace week03_BankApp_Behaviours_
             Console.Clear();
             header();
             SubMenu("Login Menu");
-            int checker = -1;
+            
             bool check = false;
 
             string name;
             string pass;
             string creditCard = "";
-            bool check1 = false;
+            
 
 
             name = signUpName("Login Menu");
@@ -300,6 +307,7 @@ namespace week03_BankApp_Behaviours_
                 temp.loans = 0;
                 if (bankInfo.checkAdmin == true)
                 {
+                    temp.creditCardNo = bankInfo.bankCode;
                     temp.isAdmin = true;
                     temp.cash = bankInfo.bankBalance;
                 }
@@ -422,6 +430,7 @@ namespace week03_BankApp_Behaviours_
                 userMenu("Admin");
 
                 string choice;
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Press 1 to view All Clients: ");
                 Console.WriteLine("Press 2 to Remove an Exsiting Client: ");
                 Console.WriteLine("Press 3 to View Requests: ");
@@ -433,8 +442,11 @@ namespace week03_BankApp_Behaviours_
                 Console.WriteLine("Press 9 to Search for a specific Client:");
                 Console.WriteLine("Press 10 to Edit your account: ");
                 Console.WriteLine("Press 11 to Check Reviews of Customers: ");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("Press 12 to Logout: ");
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Enter Your Choice: ");
+                Console.ForegroundColor = ConsoleColor.White;
                 choice = Console.ReadLine();
 
                 logout = adminMenuOptions(choice, users, bankInfo);
@@ -772,11 +784,14 @@ namespace week03_BankApp_Behaviours_
         }
         public static void delAdmin(int index, List<bankClass> users, bankClass bankInfo)
         {
-            string bankCode1;
+            
             int choice;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("It is a Manager's account, are you sure you want to remove this account");
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Press 1 to Remove account: ");
             Console.WriteLine("Press 2 to Keep it: ");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter your choice: ");
             choice = int.Parse(Console.ReadLine());
 
@@ -836,10 +851,10 @@ namespace week03_BankApp_Behaviours_
         ///////////////////////////////////////
         //
         //
-        /* public static void clientMenu()
+         public static void clientMenu(List<bankClass> users, bankClass bankInfo)
          {
 
-             bool logout = false;
+             int logout = 0;
 
              while (true)
              {
@@ -847,7 +862,8 @@ namespace week03_BankApp_Behaviours_
                  header();
                  userMenu("Client");
                  string choice;
-                 Console.WriteLine( "Press 1 to Check Your Balance: " );
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine( "Press 1 to Check Your Balance: " );
                  Console.WriteLine( "Press 2 to Withdraw Cash: " );
                  Console.WriteLine( "Press 3 to Deposit Cash: " );
                  Console.WriteLine( "Press 4 to Request For a Loan: " );
@@ -859,86 +875,93 @@ namespace week03_BankApp_Behaviours_
                  Console.WriteLine( "Press 10 to pay for Funds: " );
                  Console.WriteLine( "Press 11 to Enter Other Services: " );
                  Console.WriteLine( "Press 12 to Give Your Reviews: " );
+                 Console.ForegroundColor = ConsoleColor.DarkRed;
                  Console.WriteLine( "Press 13 to delete your account: " );
                  Console.WriteLine( "Press 14 to Logout: " );
+                 Console.ForegroundColor = ConsoleColor.Blue;
                  Console.WriteLine( "Enter Your Choice: ");
+                 Console.ForegroundColor = ConsoleColor.White;
                  choice = Console.ReadLine();
 
-                 logout = clientMenuOptions(choice);
+                 logout = clientMenuOptions(choice, users, bankInfo);
 
-                 if (logout == true)
+                 if (logout == 1)
                  {
-                     if (reviewCheck[CurrentUserIndex] == false)
+                     if (users[bankInfo.CurrentUserIndex].reviewCheck == false)
                      {
-                         clientReviewsOptions();
+                         clientReviewsOptions(users, bankInfo);
                      }
                      break;
                  }
+                 else if(logout == 2)
+                {
+                    break;
+                }
              }
          }
-         public static bool clientMenuOptions(string choice)
+         public static int clientMenuOptions(string choice,List<bankClass> users, bankClass bankInfo)
          {
-             bool logout = false;
+             int logout = 0;
 
              if (choice == "1")
              {
-                 checkBalance();
+                 checkBalance(users, bankInfo);
              }
              else if (choice == "2")
              {
-                 cashWithdraw();
+                 cashWithdraw(users, bankInfo);
              }
              else if (choice == "3")
              {
-                 cashDeposit();
+                 cashDeposit(users, bankInfo);
              }
              else if (choice == "4")
              {
-                 loanRequest();
+                 loanRequest(users, bankInfo);
              }
              else if (choice == "5")
              {
-                 loanPay();
+                 loanPay(users, bankInfo);
              }
              else if (choice == "6")
              {
-                 sendCash();
+                 sendCash(users, bankInfo);
              }
              else if (choice == "7")
              {
-                 payBills();
+                 payBills(users, bankInfo);
              }
              else if (choice == "8")
              {
-                 complaint();
+                 complaint(users, bankInfo);
              }
              else if (choice == "9")
              {
-                 editAccount();
+                 editAccount(users, bankInfo);
              }
              else if (choice == "10")
              {
-                 clientFunds();
+                 clientFunds(users, bankInfo);
              }
              else if (choice == "11")
              {
-                 otherServices();
+                 otherServices(users, bankInfo);
              }
              else if (choice == "12")
              {
-                 clientReviewsOptions();
+                 clientReviewsOptions(users, bankInfo);
              }
              else if (choice == "13")
              {
-                 bool check = deleteMyAccount(userName[CurrentUserIndex], password[CurrentUserIndex]);
+                 bool check = deleteMyAccount(users,bankInfo);
                  if (check == true)
                  {
-                     logout = true;
+                     logout = 2;
                  }
              }
              else if (choice == "14")
              {
-                 logout = true;
+                 logout = 1;
              }
              else
              {
@@ -947,17 +970,17 @@ namespace week03_BankApp_Behaviours_
              }
              return logout;
          }
-         public static void checkBalance()
+         public static void checkBalance(List<bankClass> users, bankClass bankInfo)
          {
              Console.Clear();
              header();
              userClientMenu("Balance");
 
-             Console.WriteLine( "Your Current Balance is: " << cash[CurrentUserIndex] );
-             Console.WriteLine( "Your Current Loan to Pay is: " << loans[CurrentUserIndex] );
+             Console.WriteLine( "Your Current Balance is: " + users[bankInfo.CurrentUserIndex].cash );
+             Console.WriteLine( "Your Current Loan to Pay is: " + users[bankInfo.CurrentUserIndex].loans);
              press();
          }
-         public static void cashWithdraw()
+         public static void cashWithdraw(List<bankClass> users, bankClass bankInfo)
          {
              Console.Clear();
              header();
@@ -965,47 +988,47 @@ namespace week03_BankApp_Behaviours_
              {
 
                  int withdraw;
-                 Console.WriteLine( "Enter cash to be Withdrawn: ";
+                 Console.WriteLine( "Enter cash to be Withdrawn: ");
                  withdraw = int.Parse(Console.ReadLine());
 
-                 if (withdraw <= cash[CurrentUserIndex])
+                 if (withdraw <= users[bankInfo.CurrentUserIndex].cash)
                  {
-                     cash[CurrentUserIndex] = cash[CurrentUserIndex] - withdraw;
-                     Console.WriteLine( "You Have withdrawn: " << withdraw << " Rs" );
-                     Console.WriteLine( "Your Remaining Balance is: " << cash[CurrentUserIndex] );
-                     bankBalance = bankBalance - withdraw;
-                     transactions[CurrentUserIndex] = transactions[CurrentUserIndex] + withdraw;
-                     storeData();
+                     users[bankInfo.CurrentUserIndex].cash = users[bankInfo.CurrentUserIndex].cash - withdraw;
+                     Console.WriteLine( "You Have withdrawn: " + withdraw + " Rs" );
+                     Console.WriteLine( "Your Remaining Balance is: " + users[bankInfo.CurrentUserIndex].cash);
+                     bankInfo.bankBalance = bankInfo.bankBalance - withdraw;
+                     users[bankInfo.CurrentUserIndex].transactions = users[bankInfo.CurrentUserIndex].transactions + withdraw;
+                     storeData(users);
                      press();
                  }
-                 else if (withdraw > cash[CurrentUserIndex])
+                 else if (withdraw > users[bankInfo.CurrentUserIndex].cash)
                  {
                      Console.WriteLine( "Sorry! Your Account doesnt have Enough Balance: " );
                      press();
                  }
              }
          }
-         public static void cashDeposit()
+         public static void cashDeposit(List<bankClass> users, bankClass bankInfo)
          {
              Console.Clear();
              header();
              userClientMenu("Deposite cash");
              string creditCard;
 
-             char any;
+             
              int deposit;
-             Console.WriteLine( "Enter Cash to Deposit: ";
+             Console.WriteLine( "Enter Cash to Deposit: ");
              deposit = int.Parse(Console.ReadLine());
-             Console.WriteLine( "Enter creditCard Number: ";
-             creditCard = int.Parse(Console.ReadLine());
+             Console.WriteLine( "Enter creditCard Number: ");
+             creditCard = Console.ReadLine();
 
-             if (creditCard == creditCardNo[CurrentUserIndex])
+             if (creditCard == users[bankInfo.CurrentUserIndex].creditCardNo)
              {
-                 bankBalance = bankBalance + deposit;
-                 cash[CurrentUserIndex] = cash[CurrentUserIndex] + deposit;
-                 depositions[CurrentUserIndex] = depositions[CurrentUserIndex] + deposit;
-                 Console.WriteLine( deposit << " Rs. has been deposited in your account: " );
-                 storeData();
+                 bankInfo.bankBalance = bankInfo.bankBalance + deposit;
+                 users[bankInfo.CurrentUserIndex].cash = users[bankInfo.CurrentUserIndex].cash + deposit;
+                 users[bankInfo.CurrentUserIndex].depositions = users[bankInfo.CurrentUserIndex].depositions + deposit;
+                 Console.WriteLine( deposit + " Rs. has been deposited in your account: " );
+                 storeData(users);
                  press();
              }
              else
@@ -1014,7 +1037,7 @@ namespace week03_BankApp_Behaviours_
                  press();
              }
          }
-         public static void loanRequest()
+         public static void loanRequest(List<bankClass> users, bankClass bankInfo)
          {
              Console.Clear();
              header();
@@ -1049,12 +1072,12 @@ namespace week03_BankApp_Behaviours_
 
              sum = ((year - currentYear) * 365) + ((month - currentMonth) * 30) + (date - currentDate);
 
-             if (loans[CurrentUserIndex] > 0)
+             if (users[bankInfo.CurrentUserIndex].loans > 0)
              {
                  Console.WriteLine( "Sorry! We Cannot Provide you more loan Because You Already have a loan to pay: " );
                  press();
              }
-             else if (loans[CurrentUserIndex] == 0)
+             else if (users[bankInfo.CurrentUserIndex].loans == 0)
              {
 
                  if (loan >= 1000000)
@@ -1063,14 +1086,14 @@ namespace week03_BankApp_Behaviours_
                      {
                          Console.WriteLine( "You Have been Given the loan: " );
                          Console.WriteLine( "ThankYou for Using this App: " );
-                         cash[CurrentUserIndex] = cash[CurrentUserIndex] + loan;
-                         loans[CurrentUserIndex] = loan;
-                         bankBalance = bankBalance - loan;
+                         users[bankInfo.CurrentUserIndex].cash = users[bankInfo.CurrentUserIndex].cash + loan;
+                         users[bankInfo.CurrentUserIndex].loans = loan;
+                         bankInfo.bankBalance = bankInfo.bankBalance - loan;
                          press();
                      }
                      else if (sum > 360)
                      {
-                         Console.WriteLine( "Sorry! We Can't Provide you " << loan << " Rs for more than a Year" );
+                         Console.WriteLine( "Sorry! We Can't Provide you " + loan + " Rs for more than a Year" );
                          press();
                      }
                  }
@@ -1080,15 +1103,15 @@ namespace week03_BankApp_Behaviours_
                      {
                          Console.WriteLine( "You Have been Given the loan: " );
                          Console.WriteLine( "ThankYou for Using this App: " );
-                         cash[CurrentUserIndex] = cash[CurrentUserIndex] + loan;
-                         loans[CurrentUserIndex] = loan;
-                         bankBalance = bankBalance - loan;
-                         storeData();
+                         users[bankInfo.CurrentUserIndex].cash = users[bankInfo.CurrentUserIndex].cash + loan;
+                         users[bankInfo.CurrentUserIndex].loans = loan;
+                         bankInfo.bankBalance = bankInfo.bankBalance - loan;
+                         storeData(users);
                          press();
                      }
                      else if (sum > 180)
                      {
-                         Console.WriteLine( "Sorry! We Can't Provide you " << loan << " Rs for more than 6 Months" );
+                         Console.WriteLine( "Sorry! We Can't Provide you " + loan + " Rs for more than 6 Months" );
                          press();
                      }
                  }
@@ -1098,10 +1121,10 @@ namespace week03_BankApp_Behaviours_
                      {
                          Console.WriteLine( "You Have been Given the loan: " );
                          Console.WriteLine( "ThankYou for Using this App: " );
-                         cash[CurrentUserIndex] = cash[CurrentUserIndex] + loan;
-                         loans[CurrentUserIndex] = loan;
-                         bankBalance = bankBalance - loan;
-                         storeData();
+                         users[bankInfo.CurrentUserIndex].cash = users[bankInfo.CurrentUserIndex].cash + loan;
+                         users[bankInfo.CurrentUserIndex].loans = loan;
+                         bankInfo.bankBalance = bankInfo.bankBalance - loan;
+                         storeData(users);
                          press();
                      }
                      else if (sum > 90)
@@ -1112,7 +1135,7 @@ namespace week03_BankApp_Behaviours_
                  }
              }
          }
-         public static void loanPay()
+         public static void loanPay(List<bankClass> users, bankClass bankInfo)
          {
              Console.Clear();
              header();
@@ -1120,46 +1143,46 @@ namespace week03_BankApp_Behaviours_
              string creditCard;
              int payLoan;
 
-             if (loans[CurrentUserIndex] == 0)
+             if (users[bankInfo.CurrentUserIndex].loans == 0)
              {
                  Console.WriteLine( "You Dont have any loans to pay: " );
                  press();
              }
 
-             else if (loans[CurrentUserIndex] > 0)
+             else if (users[bankInfo.CurrentUserIndex].loans > 0)
              {
-                 Console.WriteLine( "You Have " << loans[CurrentUserIndex] << " Rs to Pay" );
-                 Console.WriteLine( "Enter Price You Want to pay: ";
+                 Console.WriteLine( "You Have " + users[bankInfo.CurrentUserIndex].loans + " Rs to Pay" );
+                 Console.WriteLine( "Enter Price You Want to pay: ");
                  payLoan = int.Parse(Console.ReadLine());
-                 Console.WriteLine( "Enter creditCard Number: ";
+                 Console.WriteLine( "Enter creditCard Number: ");
                  creditCard = Console.ReadLine();
 
-                 if (creditCard == creditCardNo[CurrentUserIndex] && cash[CurrentUserIndex] > payLoan)
+                 if (creditCard == users[bankInfo.CurrentUserIndex].creditCardNo && users[bankInfo.CurrentUserIndex].cash > payLoan)
                  {
 
-                     if (payLoan >= loans[CurrentUserIndex])
+                     if (payLoan >= users[bankInfo.CurrentUserIndex].loans)
                      {
-                         bankBalance = bankBalance + payLoan;
-                         payLoan = payLoan - loans[CurrentUserIndex];
-                         cash[CurrentUserIndex] = cash[CurrentUserIndex] + payLoan;
-                         loans[CurrentUserIndex] = 0;
+                         bankInfo.bankBalance = bankInfo.bankBalance + payLoan;
+                         payLoan = payLoan - users[bankInfo.CurrentUserIndex].loans;
+                         users[bankInfo.CurrentUserIndex].cash = users[bankInfo.CurrentUserIndex].cash + payLoan;
+                         users[bankInfo.CurrentUserIndex].loans = 0;
                          Console.WriteLine( "You have Paid more than you Were owed, Your dept has been payed" );
-                         Console.WriteLine( "Remaining Money i.e. " << payLoan << " Rs. has been Deposited to your Account " );
+                         Console.WriteLine( "Remaining Money i.e. " + payLoan + " Rs. has been Deposited to your Account " );
 
                          press();
                      }
-                     else if (payLoan < loans[CurrentUserIndex])
+                     else if (payLoan < users[bankInfo.CurrentUserIndex].loans)
                      {
-                         bankBalance = bankBalance + payLoan;
-                         loans[CurrentUserIndex] = loans[CurrentUserIndex] - payLoan;
-                         cash[CurrentUserIndex] = cash[CurrentUserIndex] - payLoan;
-                         Console.WriteLine( "Now you are Owed " << loans[CurrentUserIndex] << " Rs. More" );
+                         bankInfo.bankBalance = bankInfo.bankBalance + payLoan;
+                         users[bankInfo.CurrentUserIndex].loans = users[bankInfo.CurrentUserIndex].loans - payLoan;
+                         users[bankInfo.CurrentUserIndex].cash = users[bankInfo.CurrentUserIndex].cash - payLoan;
+                         Console.WriteLine( "Now you are Owed " + users[bankInfo.CurrentUserIndex].loans + " Rs. More" );
                          press();
                      }
                  }
              }
          }
-         public static void sendCash()
+         public static void sendCash(List<bankClass> users, bankClass bankInfo)
          {
              Console.Clear();
              header();
@@ -1168,12 +1191,12 @@ namespace week03_BankApp_Behaviours_
              int reciever;
              string name;
              string pass;
-             Console.WriteLine( "Enter Name of User You want to send cash to: ";
+             Console.WriteLine( "Enter Name of User You want to send cash to: ");
              name = Console.ReadLine();
-             Console.WriteLine( "Enter password of the user you want to send cash to: ";
+             Console.WriteLine( "Enter password of the user you want to send cash to: ");
              pass = Console.ReadLine();
 
-             reciever = checkUser(name, pass);
+             reciever = checkUser(name, pass,users);
              if (reciever == -1)
              {
                  Console.WriteLine( "This User isn't signed up in this Bank:" );
@@ -1182,80 +1205,80 @@ namespace week03_BankApp_Behaviours_
              }
              else if (reciever != -1)
              {
-                 Console.WriteLine( "Enter Money you want to send: ";
+                 Console.WriteLine( "Enter Money you want to send: ");
                  sendMoney = int.Parse(Console.ReadLine());
-                 if (cash[CurrentUserIndex] >= sendMoney)
+                 if (users[bankInfo.CurrentUserIndex].cash >= sendMoney)
                  {
-                     cash[CurrentUserIndex] = cash[CurrentUserIndex] - sendMoney;
-                     cash[reciever] = cash[reciever] + sendMoney;
+                     users[bankInfo.CurrentUserIndex].cash = users[bankInfo.CurrentUserIndex].cash - sendMoney;
+                     users[reciever].cash = users[reciever].cash + sendMoney;
 
-                     Console.WriteLine( "Your Remaining Balance is: " << cash[CurrentUserIndex] );
-                     storeData();
+                     Console.WriteLine( "Your Remaining Balance is: " + users[bankInfo.CurrentUserIndex].cash);
+                     storeData(users);
                      press();
                  }
-                 else if (cash[CurrentUserIndex] < sendMoney)
+                 else if (users[bankInfo.CurrentUserIndex].cash < sendMoney)
                  {
-                     Console.WriteLine( "You Dont Have Enough Cash";
+                     Console.WriteLine( "You Dont Have Enough Cash");
                  }
              }
          }
-         public static void payBills()
+         public static void payBills(List<bankClass> users, bankClass bankInfo)
          {
              Console.Clear();
              header();
              userClientMenu("payBills");
              int bill;
 
-             Console.WriteLine( "Enter Type of bill You Want to Pay(gas/Electricity/Phone): ";
-             bills[CurrentUserIndex] = Console.ReadLine();
-             Console.WriteLine( "Enter Amount of Bill to Pay: ";
+             Console.WriteLine( "Enter Type of bill You Want to Pay(gas/Electricity/Phone): ");
+             users[bankInfo.CurrentUserIndex].bills = Console.ReadLine();
+             Console.WriteLine( "Enter Amount of Bill to Pay: ");
              bill = int.Parse(Console.ReadLine());
 
-             if (cash[CurrentUserIndex] >= bill)
+             if (users[bankInfo.CurrentUserIndex].cash >= bill)
              {
-                 cash[CurrentUserIndex] = cash[CurrentUserIndex] - bill;
-                 bankBalance = bankBalance + bill;
+                 users[bankInfo.CurrentUserIndex].cash = users[bankInfo.CurrentUserIndex].cash - bill;
+                 bankInfo.bankBalance = bankInfo.bankBalance + bill;
                  Console.WriteLine( "Your Bill Has Been Payed:" );
-                 Console.WriteLine( "Your Remaining Bank Balance is: " << cash[CurrentUserIndex] << " Rs." );
-                 storeData();
+                 Console.WriteLine( "Your Remaining Bank Balance is: " + users[bankInfo.CurrentUserIndex].cash + " Rs." );
+                 storeData(users);
                  press();
              }
-             else if (cash[CurrentUserIndex] < bill)
+             else if (users[bankInfo.CurrentUserIndex].cash < bill)
              {
-                 Console.WriteLine( "You Dont Have Sufficient Balance to Pay The Bill: ";
+                 Console.WriteLine( "You Dont Have Sufficient Balance to Pay The Bill: ");
                  press();
              }
          }
-         public static void complaint()
+         public static void complaint(List<bankClass> users, bankClass bankInfo)
          {
              Console.Clear();
              header();
              userClientMenu("Complaints");
-             Console.WriteLine( "Enter Your Complaint: ";
-             cin.ignore();
-             getline(cin, complaints[CurrentUserIndex]);
-             complaintCheck[CurrentUserIndex] = true;
-             complaintCount++;
-             storeData();
+             Console.WriteLine( "Enter Your Complaint: ");
+            users[bankInfo.CurrentUserIndex].complaints = Console.ReadLine();
+             
+             users[bankInfo.CurrentUserIndex].complaintCheck = true;
+             
+             storeData(users);
              press();
          }
-         public static void editAccount()
+         public static void editAccount(List<bankClass> users, bankClass bankInfo)
          {
              Console.Clear();
              header();
              userClientMenu("Edit Account");
 
-             userName[CurrentUserIndex] = signUpName("Main Menu > Login Menu > Clint Menu > Edit Account");
+             users[bankInfo.CurrentUserIndex].userName = signUpName("Main Menu > Login Menu > Clint Menu > Edit Account");
 
-             password[CurrentUserIndex] = signUpPassword(userName[CurrentUserIndex], "Main Menu > Login Menu > Clint Menu > Edit Account");
+             users[bankInfo.CurrentUserIndex].password = signUpPassword(users[bankInfo.CurrentUserIndex].userName, "Main Menu > Login Menu > Clint Menu > Edit Account");
 
-             Console.WriteLine( endl;
+             Console.WriteLine();
 
              Console.WriteLine( "Your Account has been Edited: " );
-             storeData();
+             storeData(users);
              press();
          }
-         public static void clientFunds()
+         public static void clientFunds(List<bankClass> users, bankClass bankInfo)
          {
              Console.Clear();
              header();
@@ -1269,24 +1292,24 @@ namespace week03_BankApp_Behaviours_
              Console.WriteLine( "Enter creditCard Number: ");
              creditCard = Console.ReadLine();
 
-             if (creditCard == creditCardNo[CurrentUserIndex] && cash[CurrentUserIndex] > fund)
+             if (creditCard == users[bankInfo.CurrentUserIndex].creditCardNo && users[bankInfo.CurrentUserIndex].cash > fund)
              {
-                 cash[CurrentUserIndex] = cash[CurrentUserIndex] - fund;
-                 Console.WriteLine( "Your Remaining Bank Balance is: " << cash[CurrentUserIndex] << " Rs." );
+                 users[bankInfo.CurrentUserIndex].cash = users[bankInfo.CurrentUserIndex].cash - fund;
+                 Console.WriteLine( "Your Remaining Bank Balance is: " + users[bankInfo.CurrentUserIndex].cash + " Rs." );
                  Console.WriteLine( "Thank You for your donation: " );
-                 funds[CurrentUserIndex] = true;
-                 fundPayed[CurrentUserIndex] = fundPayed[CurrentUserIndex] + fund;
-                 storeData();
+                 users[bankInfo.CurrentUserIndex].funds = true;
+                 users[bankInfo.CurrentUserIndex].fundPayed = users[bankInfo.CurrentUserIndex].fundPayed + fund;
+                 storeData(users);
                  press();
              }
-             else if (creditCard != creditCardNo[CurrentUserIndex] || cash[CurrentUserIndex] < fund)
+             else if (creditCard != users[bankInfo.CurrentUserIndex].creditCardNo || users[bankInfo.CurrentUserIndex].cash < fund)
              {
                  Console.WriteLine( "Invalid Credit Card Number or not enough bank balance: " );
                  Console.WriteLine( "You can NOT pay for the donation: " );
                  press();
              }
          }
-         public static string otherServicesOptions()
+         public static string otherServicesOptions(List<bankClass> users, bankClass bankInfo)
          {
              string choice;
              while (true)
@@ -1311,42 +1334,42 @@ namespace week03_BankApp_Behaviours_
              }
              return choice;
          }
-         public static void otherServices()
+         public static void otherServices(List<bankClass> users, bankClass bankInfo)
          {
-             string choice = otherServicesOptions();
+             string choice = otherServicesOptions(users, bankInfo);
 
              if (choice == "1")
              {
-                 if (checkBook[CurrentUserIndex] == false)
+                 if (users[bankInfo.CurrentUserIndex].checkBook == false)
                  {
-                     checkBook[CurrentUserIndex] = true;
+                     users[bankInfo.CurrentUserIndex].checkBook = true;
                      Console.WriteLine( "Your Request Has Been Sent: " );
-                     storeData();
+                     storeData(users);
                      press();
                  }
-                 else if (checkBook[CurrentUserIndex] == true)
+                 else if (users[bankInfo.CurrentUserIndex].checkBook == true)
                  {
-                     Console.WriteLine( "Sorry! You Already have a Book: ";
+                     Console.WriteLine( "Sorry! You Already have a Book: ");
                      press();
                  }
              }
              else if (choice == "2")
              {
-                 if (newCard[CurrentUserIndex] == false)
+                 if (users[bankInfo.CurrentUserIndex].newCard == false)
                  {
-                     newCard[CurrentUserIndex] = true;
+                     users[bankInfo.CurrentUserIndex].newCard = true;
                      Console.WriteLine( "Your Request Has Been Sent: " );
-                     storeData();
+                     storeData(users);
                      press();
                  }
-                 else if (newCard[CurrentUserIndex] == true)
+                 else if (users[bankInfo.CurrentUserIndex].newCard == true)
                  {
-                     Console.WriteLine( "Sorry! You Already have a Card:";
+                     Console.WriteLine( "Sorry! You Already have a Card:");
                      press();
                  }
              }
          }
-         public static void clientReviewsOptions()
+         public static void clientReviewsOptions(List<bankClass> users, bankClass bankInfo)
          {
              bool check = false;
              while (check == false)
@@ -1355,81 +1378,84 @@ namespace week03_BankApp_Behaviours_
                  header();
                  userClientMenu("Reviews");
                  Console.WriteLine( "<>---(<><><>)---(<><><>)---<>---(<><><>)---(<><><>)---<>" );
-                 Console.WriteLine( endl;
+                 Console.WriteLine();
 
-                 string choice;
-                 Console.WriteLine( "Dear Miss/Sir, Kindly give Reviews of your experience" );
+                 string choice; 
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine( "Dear Miss/Sir, Kindly give Reviews of your experience" );
                  Console.WriteLine( "Your Reviews will help us improve our system" );
-                 Console.WriteLine( "choose any of the following Options" 
-                      );
-                 Console.WriteLine( "1.Excellent" );
+                 Console.WriteLine( "choose any of the following Options" );
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine( "1.Excellent" );
                  Console.WriteLine( "2.Very Good" );
                  Console.WriteLine( "3.Good" );
                  Console.WriteLine( "4.Average" );
                  Console.WriteLine( "5.Bad" );
                  Console.WriteLine( "6.Very Bad" );
                  Console.WriteLine( "7.Worst" );
-                 choice = Console.ReadLine();
+                Console.Write("Enter Your Choice: ");
+                Console.ForegroundColor = ConsoleColor.White;
+                choice = Console.ReadLine();
 
-                 check = clientReview(choice);
+                 check = clientReview(choice,users,bankInfo);
              }
-             storeData();
+             storeData(users);
          }
-         public static bool clientReview(string choice)
+         public static bool clientReview(string choice, List<bankClass> users, bankClass bankInfo)
          {
              bool check = false;
              if (choice == "1")
              {
                  check = true;
-                 reviewCheck[CurrentUserIndex] = true;
-                 clientReviews[CurrentUserIndex] = "Excellent";
+                 users[bankInfo.CurrentUserIndex].reviewCheck = true;
+                 users[bankInfo.CurrentUserIndex].clientReviews = "Excellent";
              }
              else if (choice == "2")
              {
                  check = true;
-                 reviewCheck[CurrentUserIndex] = true;
-                 clientReviews[CurrentUserIndex] = "Very Good";
+                 users[bankInfo.CurrentUserIndex].reviewCheck = true;
+                 users[bankInfo.CurrentUserIndex].clientReviews = "Very Good";
              }
              else if (choice == "3")
              {
                  check = true;
-                 reviewCheck[CurrentUserIndex] = true;
-                 clientReviews[CurrentUserIndex] = "Good";
+                 users[bankInfo.CurrentUserIndex].reviewCheck = true;
+                 users[bankInfo.CurrentUserIndex].clientReviews = "Good";
              }
              else if (choice == "4")
              {
                  check = true;
-                 reviewCheck[CurrentUserIndex] = true;
-                 clientReviews[CurrentUserIndex] = "Average";
+                 users[bankInfo.CurrentUserIndex].reviewCheck = true;
+                 users[bankInfo.CurrentUserIndex].clientReviews = "Average";
              }
              else if (choice == "5")
              {
                  check = true;
-                 reviewCheck[CurrentUserIndex] = true;
-                 clientReviews[CurrentUserIndex] = "Bad";
+                 users[bankInfo.CurrentUserIndex].reviewCheck = true;
+                 users[bankInfo.CurrentUserIndex].clientReviews = "Bad";
              }
              else if (choice == "6")
              {
                  check = true;
-                 reviewCheck[CurrentUserIndex] = true;
-                 clientReviews[CurrentUserIndex] = "Very Bad";
+                 users[bankInfo.CurrentUserIndex].reviewCheck = true;
+                 users[bankInfo.CurrentUserIndex].clientReviews = "Very Bad";
              }
              else if (choice == "7")
              {
                  check = true;
-                 reviewCheck[CurrentUserIndex] = true;
-                 clientReviews[CurrentUserIndex] = "Worst";
+                 users[bankInfo.CurrentUserIndex].reviewCheck = true;
+                 users[bankInfo.CurrentUserIndex].clientReviews = "Worst";
              }
              else
              {
                  check = false;
-                 reviewCheck[CurrentUserIndex] = false;
+                 users[bankInfo.CurrentUserIndex].reviewCheck = false;
                  Console.WriteLine( "Please Choose a valid Option" );
                  press();
              }
              return check;
          }
-         public static bool deleteMyAccount(string name, string pass)
+         public static bool deleteMyAccount(List<bankClass> users, bankClass bankInfo)
          {
              bool check;
              while (true)
@@ -1444,7 +1470,7 @@ namespace week03_BankApp_Behaviours_
 
                  if (choice == "y" || choice == "Y")
                  {
-                     delClient(name, pass);
+                     delClient(bankInfo.CurrentUserIndex, users);
                      check = true;
                      break;
                  }
@@ -1462,7 +1488,7 @@ namespace week03_BankApp_Behaviours_
 
              return check;
          }
-        */
+        
         //
         //
         /////////////////////////////////////////
@@ -1472,6 +1498,7 @@ namespace week03_BankApp_Behaviours_
         //
         public static void header()
         {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>");
             Console.WriteLine("<>                                                                                                            <>");
             Console.WriteLine("<>  oooooooooo.        .o.       ooooo      ooo oooo    oooo            .o.                                   <>");
@@ -1486,40 +1513,48 @@ namespace week03_BankApp_Behaviours_
             Console.WriteLine("<>                                                                                                            <>");
             Console.WriteLine("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>");
             Console.WriteLine("<><><>---<>---<>---<>---<>---<>---<>---<>--< BANK MANAGEMENT SYSTEM >--<>---<>---<>---<>---<>---<>---<>---<><><>");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static void SubMenuForMainMenu(string subMenu)
         {
-
+            Console.ForegroundColor = ConsoleColor.Cyan;
             string message = subMenu + "Menu";
             Console.WriteLine(message);
-            Console.WriteLine("<>---(<><><>)---(<><><>)---<>---(<><><>)---(<><><>)---<>"
-                 );
+            Console.WriteLine("<>---(<><><>)---(<><><>)---<>---(<><><>)---(<><><>)---<>");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static void SubMenu(string subMenu)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             string message = "Main Menu > " + subMenu;
             Console.WriteLine(message);
-            Console.WriteLine("<>---(<><><>)---(<><><>)---<>---(<><><>)---(<><><>)---<>"
-                 );
+            Console.WriteLine("<>---(<><><>)---(<><><>)---<>---(<><><>)---(<><><>)---<>");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static void userMenu(string subMenu)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             string message = "Main Menu > Login Menu > " + subMenu;
             Console.WriteLine(message);
             Console.WriteLine("<>---(<><><>)---(<><><>)---<>---(<><><>)---(<><><>)---<>");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static void userAdminMenu(string subMenu)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             string message = "Main Menu > Login Menu > Admin Menu > " + subMenu;
             Console.WriteLine(message);
             Console.WriteLine("<>---(<><><>)---(<><><>)---<>---(<><><>)---(<><><>)---<>");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static void userClientMenu(string subMenu)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             string message = "Main Menu > Login Menu > Clint Menu > " + subMenu;
             Console.WriteLine(message);
             Console.WriteLine("<>---(<><><>)---(<><><>)---<>---(<><><>)---(<><><>)---<>"
                  );
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static int checkUser(string name, string pass, List<bankClass> users)
         {
@@ -1564,14 +1599,19 @@ namespace week03_BankApp_Behaviours_
         {
             Console.Clear();
             header();
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("You have entered Wrong info too many times: ");
             Console.WriteLine("now you will be sent to previous Manu: ");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("Thank You for your cooperation");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static void press()
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine();
             Console.WriteLine("Press any key to continue");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
         }
         public static void programmEnds()
@@ -1579,6 +1619,7 @@ namespace week03_BankApp_Behaviours_
             Console.Clear();
             header();
 
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("Thanks For Using this Application");
             Console.WriteLine("GoodBye! & Have a good day");
             press();
@@ -1796,7 +1837,9 @@ namespace week03_BankApp_Behaviours_
             {
                 if (code.Length < 8)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Please enter a Bank Code of atleast 8 characters");
+                    Console.ForegroundColor = ConsoleColor.White;
                     press();
                     break;
                 }

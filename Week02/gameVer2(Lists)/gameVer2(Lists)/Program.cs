@@ -886,7 +886,7 @@ namespace gameVer2_Lists_
                     record = myFile.ReadLine();
                     for (int y = 0; y < (gameVariables.maze2d).GetLength(1); y++)
                     {
-                        gameVariables.maze2d[x, y] = getField1(record, y);
+                        gameVariables.maze2d[x, y] = record[y];
                     }
                 }
 

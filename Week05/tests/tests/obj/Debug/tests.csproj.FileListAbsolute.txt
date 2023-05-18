@@ -1,0 +1,7 @@
+D:\Study\OOP\Week05\tests\tests\bin\Debug\tests.exe.config
+D:\Study\OOP\Week05\tests\tests\bin\Debug\tests.exe
+D:\Study\OOP\Week05\tests\tests\bin\Debug\tests.pdb
+D:\Study\OOP\Week05\tests\tests\obj\Debug\tests.csproj.AssemblyReference.cache
+D:\Study\OOP\Week05\tests\tests\obj\Debug\tests.csproj.CoreCompileInputs.cache
+D:\Study\OOP\Week05\tests\tests\obj\Debug\tests.exe
+D:\Study\OOP\Week05\tests\tests\obj\Debug\tests.pdb

@@ -300,6 +300,7 @@ namespace bankApp_lists_
                 temp.loans = 0;
                 if (bankInfo.checkAdmin == true)
                 {
+                    temp.creditCardNo = bankInfo.bankCode;
                     temp.isAdmin = true;
                     temp.cash = bankInfo.bankBalance;
                 }
@@ -395,6 +396,7 @@ namespace bankApp_lists_
         {
             string bankCode1 = "";
 
+            
             for (int x = 0; bankCode1 != bankInfo.bankCode; x++)
             {
 

@@ -1,0 +1,7 @@
+D:\Study\OOP\Week04\UAMS\s2Lab4(UAMS)\s2Lab4(UAMS)\obj\Debug\s2Lab4(UAMS).csproj.AssemblyReference.cache
+D:\Study\OOP\Week04\UAMS\s2Lab4(UAMS)\s2Lab4(UAMS)\obj\Debug\s2Lab4(UAMS).csproj.CoreCompileInputs.cache
+D:\Study\OOP\Week04\UAMS\s2Lab4(UAMS)\s2Lab4(UAMS)\bin\Debug\s2Lab4(UAMS).exe.config
+D:\Study\OOP\Week04\UAMS\s2Lab4(UAMS)\s2Lab4(UAMS)\bin\Debug\s2Lab4(UAMS).exe
+D:\Study\OOP\Week04\UAMS\s2Lab4(UAMS)\s2Lab4(UAMS)\bin\Debug\s2Lab4(UAMS).pdb
+D:\Study\OOP\Week04\UAMS\s2Lab4(UAMS)\s2Lab4(UAMS)\obj\Debug\s2Lab4(UAMS).exe
+D:\Study\OOP\Week04\UAMS\s2Lab4(UAMS)\s2Lab4(UAMS)\obj\Debug\s2Lab4(UAMS).pdb
