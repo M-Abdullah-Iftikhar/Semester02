@@ -80,7 +80,7 @@ namespace DeckOfCards.BL
 
         public string toString()
         {
-            return getValueAsString() + "of" + getSuitAsString();
+            return getValueAsString() + " of " + getSuitAsString();
         }
     }
 }

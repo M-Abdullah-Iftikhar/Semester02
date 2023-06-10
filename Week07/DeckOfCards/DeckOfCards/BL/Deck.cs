@@ -24,5 +24,36 @@ namespace DeckOfCards.BL
                 }
             }
         }
+
+        public void shuffle()
+        {
+            System.Random rand = new System.Random();
+            Card temp;
+            for(int i = 0;i < 52; i++)
+            {
+                int num = rand.Next(0, 52);
+                temp = deck[num];
+                deck[num] = deck[i];
+                deck[i] = temp;
+            }
+            count = 52;
+        }
+        public Card dealCard()
+        {
+            if(count > 0)
+            {
+                count--;
+                return deck[count];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public int cardsLeft()
+        {
+            return count;
+        }
     }
 }
