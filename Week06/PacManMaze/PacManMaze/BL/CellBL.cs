@@ -45,5 +45,23 @@ namespace PacManMaze.BL
             this.Y = Y;
         }
 
+        public bool isPacmanPresent()
+        {
+            if(value == 'P')
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool isGhostPresent(char ghostChar)
+        {
+
+            if (value == ghostChar)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }
