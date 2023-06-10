@@ -1,0 +1,21 @@
+C:\Users\faiza\Desktop\New folder\Week6.1lab\Week6.1lab\bin\Debug\Week6.1lab.exe.config
+C:\Users\faiza\Desktop\New folder\Week6.1lab\Week6.1lab\bin\Debug\Week6.1lab.exe
+C:\Users\faiza\Desktop\New folder\Week6.1lab\Week6.1lab\bin\Debug\Week6.1lab.pdb
+C:\Users\faiza\Desktop\New folder\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.csproj.AssemblyReference.cache
+C:\Users\faiza\Desktop\New folder\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.csproj.CoreCompileInputs.cache
+C:\Users\faiza\Desktop\New folder\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.exe
+C:\Users\faiza\Desktop\New folder\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.pdb
+C:\Users\Noorfatima\Downloads\Week6.1lab\Week6.1lab\bin\Debug\Week6.1lab.exe.config
+C:\Users\Noorfatima\Downloads\Week6.1lab\Week6.1lab\bin\Debug\Week6.1lab.exe
+C:\Users\Noorfatima\Downloads\Week6.1lab\Week6.1lab\bin\Debug\Week6.1lab.pdb
+C:\Users\Noorfatima\Downloads\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.csproj.AssemblyReference.cache
+C:\Users\Noorfatima\Downloads\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.csproj.CoreCompileInputs.cache
+C:\Users\Noorfatima\Downloads\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.exe
+C:\Users\Noorfatima\Downloads\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.pdb
+D:\Study\Semester02\OOP\New folder\Week6.1lab\Week6.1lab\Week6.1lab\bin\Debug\Week6.1lab.exe.config
+D:\Study\Semester02\OOP\New folder\Week6.1lab\Week6.1lab\Week6.1lab\bin\Debug\Week6.1lab.exe
+D:\Study\Semester02\OOP\New folder\Week6.1lab\Week6.1lab\Week6.1lab\bin\Debug\Week6.1lab.pdb
+D:\Study\Semester02\OOP\New folder\Week6.1lab\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.csproj.AssemblyReference.cache
+D:\Study\Semester02\OOP\New folder\Week6.1lab\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.csproj.CoreCompileInputs.cache
+D:\Study\Semester02\OOP\New folder\Week6.1lab\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.exe
+D:\Study\Semester02\OOP\New folder\Week6.1lab\Week6.1lab\Week6.1lab\obj\Debug\Week6.1lab.pdb
