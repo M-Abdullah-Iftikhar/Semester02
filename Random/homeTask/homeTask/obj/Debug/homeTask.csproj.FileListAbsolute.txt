@@ -1,0 +1,7 @@
+C:\Users\MUGHAL RAJ\Desktop\homeTask\homeTask\bin\Debug\homeTask.exe.config
+C:\Users\MUGHAL RAJ\Desktop\homeTask\homeTask\bin\Debug\homeTask.exe
+C:\Users\MUGHAL RAJ\Desktop\homeTask\homeTask\bin\Debug\homeTask.pdb
+C:\Users\MUGHAL RAJ\Desktop\homeTask\homeTask\obj\Debug\homeTask.csproj.AssemblyReference.cache
+C:\Users\MUGHAL RAJ\Desktop\homeTask\homeTask\obj\Debug\homeTask.csproj.CoreCompileInputs.cache
+C:\Users\MUGHAL RAJ\Desktop\homeTask\homeTask\obj\Debug\homeTask.exe
+C:\Users\MUGHAL RAJ\Desktop\homeTask\homeTask\obj\Debug\homeTask.pdb

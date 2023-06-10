@@ -12,8 +12,8 @@ namespace BankApp_3_Tier_Classes_.DL
     public static class AdminClassDL
     {
         public static List<AdminClassBL> Admin = new List<AdminClassBL>();
-        public static int bankBalance = 1000000;
-        public static string bankCode = "12341234";
+        public static int bankBalance;
+        public static string bankCode;
 
         public static bool checkAdminBankCode(string bankCode1)
         {
