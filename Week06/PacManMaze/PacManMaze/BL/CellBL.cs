@@ -8,7 +8,7 @@ namespace PacManMaze.BL
 {
     class CellBL
     {
-        CellBL(char value, int X, int Y)
+        public CellBL(char value, int X, int Y)
         {
             this.X = X;
             this.Y = Y;

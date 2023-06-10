@@ -9,41 +9,72 @@ namespace PacManMaze.BL
 {
     class GridBL
     {
-        public GridBL(int rowSize,int columnSize,string path)
+        public GridBL(int rowSize, int columnSize, string path)
         {
             this.rowSize = rowSize;
             this.columnSize = columnSize;
             maze = new CellBL[rowSize, columnSize];
+            constructMaze(rowSize, columnSize);
 
         }
 
-        CellBL[,] maze;
+        private CellBL[,] maze;
         int rowSize;
         int columnSize;
 
+        public  void constructMaze(int rowSize, int columnSize)
+        {
+            for (int x = 0; x < rowSize; x++)
+            {
+                for (int y = 0; y < columnSize; y++)
+                {
+                    char a;
+                    if (x == 0 || x == (rowSize - 1) || y == 0 || y == (columnSize - 1))
+                    {
+                        a = '#';
+                    }
+                    else
+                    {
+                        a = ' ';
+                    }
+                    CellBL c = new CellBL(a,x,y);
+                    maze[x, y] = c;
+                }
+            }
+        }
+
+       
+        public  void setCellInMaze(int X,int Y,CellBL c)
+        {
+            maze[Y, X] = c;
+        }
+        public CellBL getCellFromMaze(int X, int Y)
+        {
+            return this.maze[Y, X];
+        }
         public CellBL getLeftCell(CellBL c)
         {
             int X = c.getX();
             int Y = c.getY();
-            return maze[X, Y - 1];
+            return this.maze[Y, X - 1];
         }
         public CellBL getRightCell(CellBL c)
         {
             int X = c.getX();
             int Y = c.getY();
-            return maze[X, Y + 1];
+            return this.maze[Y, X + 1];
         }
-        public CellBL getUpCell(CellBL c)
+        public  CellBL getUpCell(CellBL c)
         {
             int X = c.getX();
             int Y = c.getY();
-            return maze[X - 1, Y];
+            return this.maze[Y - 1, X];
         }
         public CellBL getDownCell(CellBL c)
         {
             int X = c.getX();
             int Y = c.getY();
-            return maze[X + 1, Y];
+            return maze[Y + 1, X];
         }
         public CellBL findPacman()
         {
